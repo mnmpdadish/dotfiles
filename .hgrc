@@ -1,0 +1,62 @@
+[ui]
+# Name data to appear in commits
+username = mnmpdadish <mnmpdadish@hotmail.com>
+
+[extensions]
+graphlog = 
+
+[web]
+allow_push = *
+allow_pull = *
+
+[trusted]
+users = maxime
+groups = maxime
+
+
+[extensions]
+# enable color extension
+color =
+# enable extdiff extension (Extended Diff)
+hgext.extdiff =
+
+[extdiff]
+# configure extended diff to use colordiff (requires colordiff installed in your system)
+cmd.cdiff = colordiff
+opts.cdiff = -uprN
+
+[color]
+# configure colors for each possible hg status
+status.modified = blue bold
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold
+status.unknown = magenta bold
+status.ignored = white bold
+# and for hg diff output also
+diff.diffline = bold
+diff.extended = cyan bold
+diff.file_a = red bold
+diff.file_b = green bold
+diff.hunk = magenta
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = bold red_background
+
+
+#push_ssl = false
+
+#[merge-tools]
+#splice.executable = mvim
+#splice.args = -f $base $local $other $output -c 'SpliceInit'
+#splice.premerge = keep
+#splice.priority = 1
+
+#[merge-tools]
+#vimdiff.executable = vim
+#vimdiff.args = -d $base $local $output $other -c "wincmd J"
+
+#vimdiff.args = -d $base $local $output $other +close +close
+
+

@@ -1,0 +1,28 @@
+## Here is an example for Python.
+##
+syntax "python" "\.py$"
+header "^#!.*/python[-0-9._]*"
+icolor brightblue "def [0-9A-Z_]+"
+color brightcyan "\<(and|as|assert|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|not|or|pass|print|raise|return|try|while|with|yield)\>"
+color brightgreen "['][^']*[^\\][']" "[']{3}.*[^\\][']{3}"
+color brightgreen "["][^"]*[^\\]["]" "["]{3}.*[^\\]["]{3}"
+color brightgreen start=""""[^"]" end=""""" start="'''[^']" end="'''"
+color brightred "#.*$"
+
+include /usr/share/nano/c.nanorc 
+include /usr/share/nano/html.nanorc 
+include /usr/share/nano/makefile.nanorc
+include /usr/share/nano/python.nanorc
+include /usr/share/nano/xml.nanorc
+include /usr/share/nano/tex.nanorc
+include /usr/share/nano/sh.nanorc
+include /usr/share/nano/ruby.nanorc
+include /usr/share/nano/fortran.nanorc
+
+
+#asm.nanorc     fortran.nanorc   man.nanorc     ocaml.nanorc   ruby.nanorc
+#awk.nanorc     gentoo.nanorc    mgp.nanorc     patch.nanorc   sh.nanorc
+#c.nanorc       groff.nanorc     mutt.nanorc    perl.nanorc    tcl.nanorc
+#cmake.nanorc   html.nanorc      nano-menu.xpm  php.nanorc     tex.nanorc
+#css.nanorc     java.nanorc      nanorc.nanorc  pov.nanorc     xml.nanorc
+#debian.nanorc  makefile.nanorc  objc.nanorc    python.nanorc
