@@ -1,3 +1,7 @@
+#create shortcut for middle mouse button:
+#xdotool click 2     ---- to emulate middle mouse button
+
+
 # HORIZONTAL=900
 # VERTICAL=650
 # wmctrl -r ":ACTIVE:" -e 0,-1,-1,${HORIZONTAL},${VERTICAL}
@@ -5,6 +9,8 @@ archey
 #screenfetch
 
 
+
+#qconf -spl
 
 
 
@@ -153,25 +159,84 @@ scpg="charleb1@graham.computecanada.ca"
 alias cedar='ssh -X charleb1@cedar.computecanada.ca'
 scpc="charleb1@cedar.computecanada.ca"
 
-alias luna='ssh -Y charlebois@luna.t.u-tokyo.ac.jp'
-scpl='charlebois@luna.t.u-tokyo.ac.jp'
+
+alias luna='ssh -Y charlebois@133.9.185.44'
+scpl='charlebois@133.9.185.44'
+
+alias sol='ssh -Y charlebois@133.9.185.48'
+scpsol='charlebois@133.9.185.48'
+
+#alias luna='ssh -Y charlebois@luna.t.u-tokyo.ac.jp'
+#scpl='charlebois@luna.t.u-tokyo.ac.jp'
 
 alias mams='ssh -X charleb1@tremblay-ms.ccs.usherbrooke.ca'
 alias mamp='ssh -X charleb1@tremblay-mp2.ccs.usherbrooke.ca'
+alias mp2b='ssh -X charleb1@mp2b.calculquebec.ca'
+scpb="charleb1@mp2b.calculquebec.ca"
+
 alias cq-eeY='ssh -Y user7@colosse.calculquebec.ca'
 alias cq-eeH='ssh -Y user7@helios.calculquebec.ca'
 
-#alias hemulen2='ssh charlebois@hemulen.mns.kyutech.ac.jp'
-#scph2='charlebois@hemulen.mns.kyutech.ac.jp'
+alias hemulen2='ssh charlebois@hemulen.mns.kyutech.ac.jp'
+scph2='charlebois@hemulen.mns.kyutech.ac.jp'
 alias hemulen='ssh maxime@hemulen.mns.kyutech.ac.jp'
 scph='maxime@hemulen.mns.kyutech.ac.jp'
 
+alias scprespack='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' \
+                  /home/maxime/dev/RESPACK/util charlebois@133.9.185.44:/home/charlebois/dev/RESPACK/. ; \
+                  rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='calc_w*' --exclude='calc_c*' --exclude='calc_j*'\
+                  /home/maxime/dev/RESPACK/src  charlebois@133.9.185.44:/home/charlebois/dev/RESPACK/. ; '
 
-alias scprespack='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='*calc_*'\
-                  /home/maxime/dev/RESPACK/src  charlebois@luna.t.u-tokyo.ac.jp:/home/charlebois/dev/RESPACK/. ; \
-                  rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='*calc_*'\
-                  /home/maxime/dev/RESPACK/util charlebois@luna.t.u-tokyo.ac.jp:/home/charlebois/dev/RESPACK/. ; '
+alias scprespacks1='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' \
+                    /home/maxime/dev/RESPACK/util k019907@sekirei.issp.u-tokyo.ac.jp:/home/k0199/k019907/dev/RESPACK/. ; \
+                    rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='calc_w*' --exclude='calc_c*' --exclude='calc_j*'\
+                    /home/maxime/dev/RESPACK/src  k019907@sekirei.issp.u-tokyo.ac.jp:/home/k0199/k019907/dev/RESPACK/. ; '
 
+alias scprespacks='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' \
+                   /home/maxime/dev/RESPACK/util k003117@sekirei.issp.u-tokyo.ac.jp:/home/k0031/k003117/dev/RESPACK/. ; \
+                   rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='calc_w*' --exclude='calc_c*' --exclude='calc_j*'\
+                   /home/maxime/dev/RESPACK/src  k003117@sekirei.issp.u-tokyo.ac.jp:/home/k0031/k003117/dev/RESPACK/. ; '
+
+#alias scpmvmc='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='*.out' --exclude='*.git*' --exclude='samples/*/*/*/output*' \
+#               /home/maxime/dev/mvmc_dev_misawa/mvmc  charlebois@133.9.185.44:/home/charlebois/dev/. ; '
+
+#alias scpmvmcs='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='*.out' --exclude='*.git*' --exclude='samples/*/*/*/output*' \
+#               /home/maxime/dev/mvmc_dev_misawa/mvmc  k003117@sekirei.issp.u-tokyo.ac.jp:/home/k0031/k003117/dev/. ; '
+
+alias scpmvmc2s='rsync -rav -e ssh --exclude='*.so' --exclude='*.o' --exclude='*.mod' --exclude='*.out' --exclude='*.git*' --exclude='samples/*/*/*/output*' \
+               /home/maxime/dev/mvmc_dev  k019907@sekirei.issp.u-tokyo.ac.jp:/home/k0199/k019907/dev/. ; '
+
+alias scpmvmc2m='rsync -rav -e ssh --exclude='*.so' --exclude='*.o' --exclude='*.mod' --exclude='*.out' --exclude='*.git*' --exclude='samples/*/*/*/output*' \
+               /home/maxime/dev/mvmc_dev  m000317@sekirei.issp.u-tokyo.ac.jp:/home/m0003/m000317/dev/. ; '
+
+alias scpmvmc2='rsync -rav -e ssh --exclude='*.so' --exclude='*.o' --exclude='*.mod' --exclude='*.out' --exclude='*.git*' --exclude='samples/*/*/*/output*' \
+               /home/maxime/dev/mvmc_dev  charlebois@133.9.185.44:/home/charlebois/dev/. ; '
+
+alias scpkota='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='*.out'\
+               /home/maxime/dev/mvmc_dev_misawa  charlebois@133.9.185.44:/home/charlebois/dev/. ; '
+
+#k019907
+alias se='ssh -Y -l k019907 sekirei.issp.u-tokyo.ac.jp'
+scpse='k019907@sekirei.issp.u-tokyo.ac.jp'
+
+alias sekireim='ssh -Y -l m000317 sekirei.issp.u-tokyo.ac.jp'
+scpsm='m000317@sekirei.issp.u-tokyo.ac.jp'
+
+alias sshw="ssh -oProxyCommand='corkscrew www-proxy.mse.waseda.ac.jp 8080 %h %p' -Y"
+alias scpw="scp -oProxyCommand='corkscrew www-proxy.mse.waseda.ac.jp 8080 %h %p'"
+
+alias sekirei='ssh -Y -l k003117 sekirei.issp.u-tokyo.ac.jp'
+scps='k003117@sekirei.issp.u-tokyo.ac.jp'
+
+alias suzuki='ssh -Y -l k003115 sekirei.issp.u-tokyo.ac.jp'
+scpsz='k003115@sekirei.issp.u-tokyo.ac.jp'
+
+alias seki='ssh -Y -l r009504 sekirei.issp.u-tokyo.ac.jp'
+scpseki='r009504@sekirei.issp.u-tokyo.ac.jp'
+
+alias landau='ssh -Y -l maxime 133.11.72.155'
+
+win='/home/maxime/win/'
 #alias qcmyo='/home/maxime/dev/bin/qcm'
 #alias cdg='cd /home/maxime/dev/run/graphene/'
 
@@ -179,6 +244,8 @@ alias c='cd ..; pwd; ls'
 alias sd="pushd +1; ls"
 alias b="vi ~/.bashrc"
 alias s=". ~/.bashrc"
+alias diag="du -hs * | sort -h"
+alias pdf="qpdfview "
 EDITOR=vim
 
 alias go='nautilus .'
@@ -197,6 +264,7 @@ alias gedit='pluma'
 
 
 alias gitlog='git log --graph --all --decorate'
+alias mario='~/dev/game/palettePNG/palettePNG ~/dev/game/palettePNG/linux_sprite_palette.png'
 
 
 
@@ -214,6 +282,9 @@ export PYTHONPATH=$HOME/bin:$PYTHONPATH
 export PYTHONPATH=$HOME/bin/AlexandreFoley:$PYTHONPATH
 export PATH=$HOME/bin/respack:$PATH
 export PATH=$HOME/bin/xtapp:$PATH
+
+export PYTHONPATH=$HOME/dev/mvmc_dev/tool/dvmc:$PYTHONPATH
+export PATH=$HOME/dev/mvmc_dev/tool/dvmc:$PATH
 
 
 
@@ -243,3 +314,13 @@ alias vesta='/home/maxime/install/VESTA-x86_64/VESTA'
 
 xset r rate 200 100
 
+#sudo update-alternatives --config x-terminal-emulator 
+
+
+alias conmp2='ssh -X simoli@tremblay-mp2.ccs.usherbrooke.ca'
+scpo=simoli@tremblay-mp2.ccs.usherbrooke.ca
+
+
+export CXX=/usr/bin/gcc-8
+
+PROMPT_COMMAND='echo -en "\033]0;$(whoami)@$(hostname)\a"'
