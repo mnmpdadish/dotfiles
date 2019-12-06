@@ -5,13 +5,12 @@
 # HORIZONTAL=900
 # VERTICAL=650
 # wmctrl -r ":ACTIVE:" -e 0,-1,-1,${HORIZONTAL},${VERTICAL}
-archey
+#archey
 #screenfetch
 
 
 
 #qconf -spl
-
 
 
 
@@ -145,6 +144,7 @@ alias lenny="export PS1='\n( ͡° ͜ʖ ͡°)\[\e[1;31m\]$\[\e[0m\] '"
 
 
 alias countLine="find . -type f \( -name "*.h" -o -name "*.c"  -o -name "*.py" -o -name "*.cpp" -o -name "*.hpp" \) -print | xargs wc -l"
+alias vimc="find . -type f \( -name "*.h" -o -name "*.c"  -o -name "*.py" -o -name "*.cpp" -o -name "*.hpp" \) -exec vim {} +"
 
 
 alias file644="find . -type f -exec chmod 644 {} \;"
@@ -310,9 +310,9 @@ export PYTHONSTARTUP=~/.pystartup
 alias netup='sudo service network-manager restart'
 alias VESTA='/home/maxime/install/VESTA-x86_64/VESTA'
 alias vesta='/home/maxime/install/VESTA-x86_64/VESTA'
+alias vi='vim'
 
-
-xset r rate 200 100
+xset r rate 200 150
 
 #sudo update-alternatives --config x-terminal-emulator 
 
