@@ -5,13 +5,12 @@
 # HORIZONTAL=900
 # VERTICAL=650
 # wmctrl -r ":ACTIVE:" -e 0,-1,-1,${HORIZONTAL},${VERTICAL}
-archey
+#archey
 #screenfetch
 
 
 
 #qconf -spl
-
 
 
 
@@ -136,23 +135,14 @@ fi
 
 #alias definis par Maxime Charlebois:
 
-alias happy="export PS1='\n(^-^)/\[\e[1;31m\]$\[\e[0m\] '"
-alias pointy="export PS1='\n(☞ ﾟヮﾟ)☞ \[\e[1;31m\]$\[\e[0m\] '"
-alias saddy="export PS1='\n(-_-)-\[\e[1;31m\]$\[\e[0m\] '"
-alias manly="export PS1='\n(^_^メ)\[\e[1;31m\]$\[\e[0m\] '"
-alias geeky="export PS1='\n(＠_＠;)\[\e[1;31m\]$\[\e[0m\] '"
 alias lenny="export PS1='\n( ͡° ͜ʖ ͡°)\[\e[1;31m\]$\[\e[0m\] '"
-
-
 alias countLine="find . -type f \( -name "*.h" -o -name "*.c"  -o -name "*.py" -o -name "*.cpp" -o -name "*.hpp" \) -print | xargs wc -l"
+alias vimc="find . -type f \( -name "*.h" -o -name "*.c"  -o -name "*.py" -o -name "*.cpp" -o -name "*.hpp" \) -exec vim {} +"
 
 
 alias file644="find . -type f -exec chmod 644 {} \;"
 alias dir755="find . -type d -exec chmod 755 {} \;"
 alias chmod0="dir755; file644;"
-alias gitl="git log --graph --all --decorate"
-
-alias src='source $HOME/.bashrc; source $HOME/.vimrc;'
 
 alias graham='ssh -X charleb1@graham.computecanada.ca'
 scpg="charleb1@graham.computecanada.ca"
@@ -162,12 +152,8 @@ scpc="charleb1@cedar.computecanada.ca"
 
 alias luna='ssh -Y charlebois@133.9.185.44'
 scpl='charlebois@133.9.185.44'
-
 alias sol='ssh -Y charlebois@133.9.185.48'
 scpsol='charlebois@133.9.185.48'
-
-#alias luna='ssh -Y charlebois@luna.t.u-tokyo.ac.jp'
-#scpl='charlebois@luna.t.u-tokyo.ac.jp'
 
 alias mams='ssh -X charleb1@tremblay-ms.ccs.usherbrooke.ca'
 alias mamp='ssh -X charleb1@tremblay-mp2.ccs.usherbrooke.ca'
@@ -176,11 +162,6 @@ scpb="charleb1@mp2b.calculquebec.ca"
 
 alias cq-eeY='ssh -Y user7@colosse.calculquebec.ca'
 alias cq-eeH='ssh -Y user7@helios.calculquebec.ca'
-
-alias hemulen2='ssh charlebois@hemulen.mns.kyutech.ac.jp'
-scph2='charlebois@hemulen.mns.kyutech.ac.jp'
-alias hemulen='ssh maxime@hemulen.mns.kyutech.ac.jp'
-scph='maxime@hemulen.mns.kyutech.ac.jp'
 
 alias scprespack='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' \
                   /home/maxime/dev/RESPACK/util charlebois@133.9.185.44:/home/charlebois/dev/RESPACK/. ; \
@@ -212,10 +193,7 @@ alias scpmvmc2m='rsync -rav -e ssh --exclude='*.so' --exclude='*.o' --exclude='*
 alias scpmvmc2='rsync -rav -e ssh --exclude='*.so' --exclude='*.o' --exclude='*.mod' --exclude='*.out' --exclude='*.git*' --exclude='samples/*/*/*/output*' \
                /home/maxime/dev/mvmc_dev  charlebois@133.9.185.44:/home/charlebois/dev/. ; '
 
-alias scpkota='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' --exclude='*.out'\
-               /home/maxime/dev/mvmc_dev_misawa  charlebois@133.9.185.44:/home/charlebois/dev/. ; '
 
-#k019907
 alias se='ssh -Y -l k019907 sekirei.issp.u-tokyo.ac.jp'
 scpse='k019907@sekirei.issp.u-tokyo.ac.jp'
 
@@ -235,10 +213,6 @@ alias seki='ssh -Y -l r009504 sekirei.issp.u-tokyo.ac.jp'
 scpseki='r009504@sekirei.issp.u-tokyo.ac.jp'
 
 alias landau='ssh -Y -l maxime 133.11.72.155'
-
-win='/home/maxime/win/'
-#alias qcmyo='/home/maxime/dev/bin/qcm'
-#alias cdg='cd /home/maxime/dev/run/graphene/'
 
 alias c='cd ..; pwd; ls'
 alias sd="pushd +1; ls"
@@ -268,54 +242,29 @@ alias mario='~/dev/game/palettePNG/palettePNG ~/dev/game/palettePNG/linux_sprite
 
 
 
+
+## path definitions
 export PATH=$PATH:$HOME/dev/bin/
-
-## programme a patrick
-export PATH=$HOME/dev/Patrick_IS/local/bin:$HOME/ALPS/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/dev/Patrick_IS/local/lib:$HOME/ALPS/lib:$LD_LIBRARY_PATH
-#export PATH=$HOME/dev/Patrick_IS/SkipList10.6/ImpuritySolver:$PATH
-export LD_LIBRARY_PATH=/opt/alps/lib:$LD_LIBRARY_PATH
-export PATH=$PATH:/opt/alps/bin
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=/opt/alps/lib:$PYTHONPATH
 export PYTHONPATH=$HOME/bin:$PYTHONPATH
-export PYTHONPATH=$HOME/bin/AlexandreFoley:$PYTHONPATH
-export PATH=$HOME/bin/respack:$PATH
-export PATH=$HOME/bin/xtapp:$PATH
 
-export PYTHONPATH=$HOME/dev/mvmc_dev/tool/dvmc:$PYTHONPATH
-export PATH=$HOME/dev/mvmc_dev/tool/dvmc:$PATH
+export PYTHONPATH=$HOME/dev/dvmc/tool/dvmc:$PYTHONPATH
+export PATH=$HOME/dev/dvmc/tool/dvmc:$PATH
 
 
-
-
-# si lgfortran manque a l'appel, met quelque chose du genre: 
-# sudo ln -s /usr/lib/x86_64-linux-gnu/libgfortran.so.3 /usr/local/lib/libgfortran.so
-
-
-alias connect='sudo mount -t vboxsf linux /home/maxime/win && sudo mount -t vboxsf Dropbox /home/maxime/drop'
-alias tmp1='sudo mount -t vboxsf linux /home/maxime/win && sudo mount -t vboxsf Dropbox /home/maxime/drop'
-
-#############################################
-source /opt/intel/bin/compilervars.sh intel64
-#############################################
-
-#sudo mount -t vboxsf linux /home/maxime/win
-#sudo mount -t vboxsf Dropbox /home/maxime/drop
+#alias connect='sudo mount -t vboxsf linux /home/maxime/win && sudo mount -t vboxsf Dropbox /home/maxime/drop'
+#alias tmp1='sudo mount -t vboxsf linux /home/maxime/win && sudo mount -t vboxsf Dropbox /home/maxime/drop'
 
 
 export PYTHONSTARTUP=~/.pystartup
-
-
 alias netup='sudo service network-manager restart'
-alias VESTA='/home/maxime/install/VESTA-x86_64/VESTA'
-alias vesta='/home/maxime/install/VESTA-x86_64/VESTA'
+alias vi='vim'
 
-
-xset r rate 200 100
+xset r rate 200 75
 
 #sudo update-alternatives --config x-terminal-emulator 
 
+alias connect='sudo mount -t vboxsf linux /home/maxime/win'
 
 alias conmp2='ssh -X simoli@tremblay-mp2.ccs.usherbrooke.ca'
 scpo=simoli@tremblay-mp2.ccs.usherbrooke.ca
@@ -323,4 +272,31 @@ scpo=simoli@tremblay-mp2.ccs.usherbrooke.ca
 
 export CXX=/usr/bin/gcc-8
 
-PROMPT_COMMAND='echo -en "\033]0;$(whoami)@$(hostname)\a"'
+#vim -c 'hardcopy > output.ps' -c quit <input_file>
+#enscript -f Courier7  --color -Ecpp -L 90 -C moves/*.*pp -o - | ps2pdf - moves.pdf
+
+function find_var() {
+   grep $1 . -r
+}
+
+export -f find_var
+
+function rep_var() {
+   tmp1=$1
+   tmp2=$2
+   grep $1 . -r
+   grep $1 . -rl | xargs sed -i "s/${1}/${2}/g"
+   grep $2 . -r
+}
+
+export -f rep_var
+
+alias vimsrc="compdb -p build/ list > compile_commands.json"
+alias src='vim $(find ./ -name "*.?pp";)'
+alias vimrc="vim ~/.vimrc"
+
+export ASAN_OPTIONS=symbolize=1:detect_leaks=0
+export UBSAN_OPTIONS=symbolize=1:print_stacktrace=1:halt_on_error=1
+export ASAN_SYMBOLIZER_PATH=/usr/bin/llvm-symbolizer-9
+export UBSAN_SYMBOLIZER_PATH=/usr/bin/llvm-symbolizer-9
+#CXX=g++-7 cmake ../ -DASAN=ON -DUBSAN=ON
