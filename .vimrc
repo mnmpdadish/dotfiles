@@ -149,6 +149,8 @@ set printoptions=number:y
 au! BufEnter *.cpp let b:fswitchdst = 'hpp'
 au! BufEnter *.hpp let b:fswitchdst = 'cpp'
 
+nmap <silent> <C-k> :set nu!<cr>
+
 " --- FSwitch bindings
 " Switch to the file and load it into the current window >
 nmap <silent> ;;of :FSHere<cr>

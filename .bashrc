@@ -155,13 +155,12 @@ scpl='charlebois@133.9.185.44'
 alias sol='ssh -Y charlebois@133.9.185.48'
 scpsol='charlebois@133.9.185.48'
 
-alias mams='ssh -X charleb1@tremblay-ms.ccs.usherbrooke.ca'
-alias mamp='ssh -X charleb1@tremblay-mp2.ccs.usherbrooke.ca'
-alias mp2b='ssh -X charleb1@mp2b.calculquebec.ca'
-scpb="charleb1@mp2b.calculquebec.ca"
-
-alias cq-eeY='ssh -Y user7@colosse.calculquebec.ca'
-alias cq-eeH='ssh -Y user7@helios.calculquebec.ca'
+#alias mams='ssh -X charleb1@tremblay-ms.ccs.usherbrooke.ca'
+#alias mamp='ssh -X charleb1@tremblay-mp2.ccs.usherbrooke.ca'
+#alias mp2b='ssh -X -o IdentitiesOnly=yes charleb1@mp2b.calculquebec.ca'
+#scpb="charleb1@mp2b.calculquebec.ca"
+#alias cq-eeY='ssh -Y user7@colosse.calculquebec.ca'
+#alias cq-eeH='ssh -Y user7@helios.calculquebec.ca'
 
 alias scprespack='rsync -rav -e ssh --exclude='*.o' --exclude='*.mod' \
                   /home/maxime/dev/RESPACK/util charlebois@133.9.185.44:/home/charlebois/dev/RESPACK/. ; \
@@ -193,6 +192,9 @@ alias scpmvmc2m='rsync -rav -e ssh --exclude='*.so' --exclude='*.o' --exclude='*
 alias scpmvmc2='rsync -rav -e ssh --exclude='*.so' --exclude='*.o' --exclude='*.mod' --exclude='*.out' --exclude='*.git*' --exclude='samples/*/*/*/output*' \
                /home/maxime/dev/mvmc_dev  charlebois@133.9.185.44:/home/charlebois/dev/. ; '
 
+
+alias se2='ssh -Y -l k003104 sekirei.issp.u-tokyo.ac.jp'
+scpse2='k003104@sekirei.issp.u-tokyo.ac.jp'
 
 alias se='ssh -Y -l k019907 sekirei.issp.u-tokyo.ac.jp'
 scpse='k019907@sekirei.issp.u-tokyo.ac.jp'
@@ -237,6 +239,7 @@ alias bethe='ssh -Y cham1617@bethe.physique.usherbrooke.ca'
 alias gedit='pluma'
 
 
+alias gitl='git l'
 alias gitlog='git log --graph --all --decorate'
 alias mario='~/dev/game/palettePNG/palettePNG ~/dev/game/palettePNG/linux_sprite_palette.png'
 
@@ -248,8 +251,8 @@ export PATH=$PATH:$HOME/dev/bin/
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$HOME/bin:$PYTHONPATH
 
-export PYTHONPATH=$HOME/dev/dvmc/tool/dvmc:$PYTHONPATH
-export PATH=$HOME/dev/dvmc/tool/dvmc:$PATH
+#export PYTHONPATH=$HOME/dev/dvmc/tool/dvmc:$PYTHONPATH
+#export PATH=$HOME/dev/dvmc/tool/dvmc:$PATH
 
 
 #alias connect='sudo mount -t vboxsf linux /home/maxime/win && sudo mount -t vboxsf Dropbox /home/maxime/drop'
@@ -300,3 +303,19 @@ export UBSAN_OPTIONS=symbolize=1:print_stacktrace=1:halt_on_error=1
 export ASAN_SYMBOLIZER_PATH=/usr/bin/llvm-symbolizer-9
 export UBSAN_SYMBOLIZER_PATH=/usr/bin/llvm-symbolizer-9
 #CXX=g++-7 cmake ../ -DASAN=ON -DUBSAN=ON
+
+
+#module load modules-nix nix/tmux
+#tmux -S /tmp/tsshared_nw attach -t shared
+
+#source /home/maxime/dev/triqs/install/share/triqsvars.sh
+
+
+
+
+#######################
+alias cpython="sudo update-alternatives --config python3"
+#sudo update-alternatives --config python
+#######################
+
+
